@@ -15,7 +15,7 @@ dashboardPage(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
       menuItem("Data", tabName = "data", icon = icon("list")),
       menuItem("Plots", tabName = "plot", icon = icon("chart-bar")),
-      menuItem("Source", icon = icon("file-code-o"), href = "https://github.com/rstudio/shinydashboard/"),
+      menuItem("Source", icon = icon("file-code-o"), href = "https://github.com/PhazeDK/catch_ssi"),
       menuItem("About", tabName = "about", icon = icon("question-circle"))
     )
   ),
