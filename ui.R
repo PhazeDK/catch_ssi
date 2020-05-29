@@ -7,6 +7,7 @@
 #    http://shiny.rstudio.com/
 #
 library(shinydashboard)
+library(plotly)
 
 dashboardPage(
   dashboardHeader(title = "CATCH"),
@@ -15,23 +16,24 @@ dashboardPage(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
       menuItem("Data", tabName = "data", icon = icon("list")),
       menuItem("Plots", tabName = "plot", icon = icon("chart-bar")),
-      menuItem("Source", icon = icon("file-code-o"), href = "https://github.com/PhazeDK/catch_ssi"),
+      menuItem("Source Code", icon = icon("code"), href = "https://github.com/PhazeDK/catch_ssi"),
       menuItem("About", tabName = "about", icon = icon("question-circle"))
     )
   ),
   dashboardBody(
+    tags$head(
+      tags$link(rel = "stylesheet", type = "text/css", href = "catch_ssi.css")
+    ),
     tabItems(
-      # First tab content
       tabItem(tabName = "dashboard",
               fluidRow(
                 box(
-                  title = "Controls",
-                  sliderInput("slider", "Number of observations:", 1, 100, 50), width=12
+                  title = "Map",
+                  plotlyOutput("map", height="600px"),
+                  width=12
                 )
               )
       ),
-      
-      # Second tab content
       tabItem(tabName = "data",
               h2("Data")
       )
