@@ -16,8 +16,8 @@ dashboardPage(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
       menuItem("Data", tabName = "data", icon = icon("list")),
       menuItem("Plots", tabName = "plot", icon = icon("chart-bar")),
-      menuItem("Source Code", icon = icon("code"), href = "https://github.com/PhazeDK/catch_ssi"),
-      menuItem("About", tabName = "about", icon = icon("question-circle"))
+      menuItem("About", tabName = "about", icon = icon("question-circle")),
+      menuItem("Source Code", icon = icon("code"), href = "https://github.com/PhazeDK/catch_ssi")
     )
   ),
   dashboardBody(
@@ -30,7 +30,17 @@ dashboardPage(
                 box(
                   title = "Map",
                   plotlyOutput("map", height="600px"),
-                  width=12
+                  width=6
+                ),
+                box(
+                  title = "Plot",
+                  plotlyOutput("plot", height="600px"),
+                  width=6
+                )
+              ),
+              fluidRow(
+                box(
+                  htmlOutput("widget")
                 )
               )
       ),
